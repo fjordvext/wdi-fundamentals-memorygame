@@ -126,7 +126,8 @@ function shuffle(deck) {
   }
 
   return deck;
-}
+};
+shuffle(deck);
 
 // Making the cards array the first seven cards of the newly shuffled deck.
 // To get the first n elements of an array, use this code (from https://stackoverflow.com/questions/34883068/how-to-get-first-n-number-of-elements-from-an-array)
