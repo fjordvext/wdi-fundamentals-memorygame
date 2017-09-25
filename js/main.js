@@ -126,7 +126,8 @@ function shuffle(deck) {
   }
 
   return deck;
-}
+};
+shuffle(deck);
 
 // Making the cards array the first seven cards of the newly shuffled deck.
 // To get the first n elements of an array, use this code (from https://stackoverflow.com/questions/34883068/how-to-get-first-n-number-of-elements-from-an-array)
@@ -136,17 +137,23 @@ var cardsSingle = deck.slice(0, 7);
 var cardsDouble = cardsSingle;
 var cards = cardsSingle.concat(cardsDouble);
 
-
 // Shuffling the array cards using the Fisher Yates method.
 shuffle(cards);
 
-// Checking two flipped cards to see if they match.
+// STILL TO COME
+// Hiding cards (switching image to back.png) after they're flipped if they're not a match.
+// Still unknown: how do I find the cards in the cards array that correspond to the cardsInPlay array?
 
+// STILL TO COME
+// Removing cards (switching image to blank space image?) after they're flipped if they are a match.
+
+
+// Checking two flipped cards to see if they match.
 var cardsInPlay = [];
 var checkForMatch = function() {
 	if (cardsInPlay.length % 2 === 0)
 		if (cardsInPlay[cardsInPlay.length-1] === cardsInPlay[cardsInPlay.length -2]) {
-		console.log("You found a match!");
+		console.log("You matched " + cardsInPlay[cardsInPlay.length-1]+ "!");
 	} else {
 		console.log("Sorry, try again.");
 		}
@@ -173,4 +180,7 @@ for (var i = 0; i < cards.length; i++) {
 	document.getElementById('game-board').appendChild(cardElement);
 }
 };
+
+
+// call createBoard function
 	createBoard();
